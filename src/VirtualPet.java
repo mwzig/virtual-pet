@@ -39,6 +39,12 @@ public class VirtualPet {
 		return tiredLevel;
 	}
 	
+	void passTheTime() {
+		tiredLevel ++;
+		hungerLevel ++;
+		thirstLevel ++;
+	}
+	
 	void giveFood(int cupsKibble) {
 
 		if (cupsKibble > cupsKibbleNeeded) {
