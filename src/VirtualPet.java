@@ -4,26 +4,20 @@ public class VirtualPet {
 	// attributes
 	private String name;
 	private int weight;
-	private int cupsKibbleNeeded;
-	private int cupsWaterNeeded;
-	private int nbrMilesNeedsToWalk;
-
-	private int hungerLevel = 75;
-	private int thirstLevel = 75;
-	// activityLevel of 33-66 is happy and exercised
-	// activityLevel of 67 or higher is highly exercised
-	// activityLevel of 0-33 is needing exercise
+	
+	private int hungerLevel;
+	private int thirstLevel;
 	private int activityLevel = 0;
 
 	private boolean needsToPee = false;
 	private boolean needsToPoop = false;
 
 	// constructor
-	public VirtualPet(String name, int weight, int cupsKibbleNeeded, int cupsWaterNeeded) {
+	public VirtualPet(String name, int hungerLevel, int thirstLevel, int activityLevel) { 
 		this.name = name;
-		this.weight = weight;
-		this.cupsKibbleNeeded = cupsKibbleNeeded;
-		this.cupsWaterNeeded = cupsWaterNeeded;
+		this.hungerLevel = hungerLevel;
+		this.thirstLevel = thirstLevel;;
+		this.activityLevel = activityLevel;
 	}
 
 	// getters
@@ -46,17 +40,17 @@ public class VirtualPet {
 	String getStatus() {
 		String status = "";
 		boolean needsSomething = false;
-		if (hungerLevel > 75) {
+		if (hungerLevel >= 50) {
 			needsSomething = true;
 			status += name + " is hungry! ";
 		}
-		if (thirstLevel > 75) {
+		if (thirstLevel >= 50) {
 			needsSomething = true;
 			status += name + " is thirsty! ";
 		}
 		if ((activityLevel < 33) || needsToPee || needsToPoop) {
 			needsSomething = true;
-			status += name + " needs a walk, please.";
+			status += name + " needs a walk, please. ";
 			status += "(";
 			if (activityLevel < 33) {
 				status += "Needs exercise! ";
@@ -79,45 +73,26 @@ public class VirtualPet {
 		activityLevel -= 5;
 	}
 
-	void giveFood(int cupsKibble) {
+	void giveFood() {
 
-		if (cupsKibble > cupsKibbleNeeded) {
-			weight += 1;
-			hungerLevel = 0;
-		} else if (cupsKibble < cupsKibbleNeeded) {
-			weight -= 1;
-			hungerLevel = 5;
-		} else {
-			hungerLevel = 0;
-		}
+		hungerLevel= 0;
 		needsToPoop = true;
-
+		
 	}
 
-	void giveWater(int cupsWater) {
+	void giveWater() {
 
-		if (cupsWater >= cupsWaterNeeded) {
-			thirstLevel = 0;
-		} else {
-			thirstLevel = 10;
-		}
+		thirstLevel = 0;
 		needsToPee = true;
 
 	}
 
-	void goForWalk(int nbrMiles) {
+	void goForWalk() {
 
-		if (nbrMiles > nbrMilesNeedsToWalk) {
-			activityLevel = 75;
-		} else if (nbrMiles < nbrMilesNeedsToWalk) {
-			activityLevel = 25;
-		} else { // nbrMiles = nbrMilesNeedsToWalk
-			activityLevel = 50; 
-		}
+		activityLevel = 75; 
 		needsToPee = false;
 		needsToPoop = false;
 
-		System.out.println("activityLevel is now " + activityLevel);
 	}
 
 }

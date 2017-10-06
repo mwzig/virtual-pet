@@ -29,24 +29,16 @@ public class VirtualPetApp {
 
 			switch (userAction) {
 				case "1":
-					System.out.println("Enter how many cups of kibble you would like to give Lucy? (1, 2, 3...)");
-					cupsKibble = input.nextInt();
-					input.nextLine();
-					myPet.giveFood(cupsKibble);
+					myPet.giveFood();
 					System.out.println("Thank you for feeding " + myPet.getName() + ".");
 					break;
 				case "2":
 					System.out.println("Enter how many cups of water you would like to give Lucy (1, 2, 3...)");
-					cupsWater = input.nextInt();
-					input.nextLine();
-					myPet.giveWater(cupsWater);
+					myPet.giveWater();
 					System.out.println("Thank you for giving " + myPet.getName() + "water.");
 					break;
 				case "3":
-					System.out.println("Enter how many miles you would like to walk Lucy (1, 2, 3...)");
-					milesToWalk = input.nextInt();
-					input.nextLine();
-					myPet.goForWalk(milesToWalk);
+					myPet.goForWalk();
 					System.out.println("Thank you for walking " + myPet.getName() + ".");
 					break;
 				case "4":
@@ -56,7 +48,7 @@ public class VirtualPetApp {
 				
 			}
 			// need to call a pass the time method here 
-			//myPet.tick();
+			myPet.tick();
 			if (userAction.equals("5")) {
 				System.out.println("Thanks for playing!");
 				
