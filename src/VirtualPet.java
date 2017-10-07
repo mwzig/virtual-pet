@@ -68,18 +68,13 @@ public class VirtualPet {
 			status += ")";
 		}
 		// If the pet gets hungry, thirsty, needs exercise, and needs to pee and poop,
-		// it will take care of its own needs by peeing and pooping on the floor, eating 
+		// it will take care of its own needs by peeing and pooping on the floor, eating
 		// your shoe, and then throwing up on your bed.
-		// 
-		if (hungerLevel >= 50 
-				&& thirstLevel >= 50
-				&& activityLevel < 33
-				&& needsToPee
-				&& needsToPoop) {
+		//
+		if (hungerLevel >= 50 && thirstLevel >= 50 && activityLevel < 33 && needsToPee && needsToPoop) {
 			status += "\nUh-Oh!!!  You have not been taking good care of your pet! ";
 			status += "\nShe ate your shoe, peed and pooped on the floor, and threw up on your bed!";
-		}
-		else {
+		} else {
 			if (!needsSomething) {
 				status += "Great Job! You are taking wonderful care of your pet!";
 			}

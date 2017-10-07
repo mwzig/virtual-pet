@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class VirtualPetApp { 
+public class VirtualPetApp {
 
 	public static void main(String[] args) {
 
@@ -9,11 +9,11 @@ public class VirtualPetApp {
 		int hungerLevel = 5;
 		int thirstLevel = 5;
 		int activityLevel = 25;
-		
+
 		VirtualPet myPet = new VirtualPet(name, nameDescriptor, hungerLevel, thirstLevel, activityLevel);
 		Scanner input = new Scanner(System.in);
 
-		String userAction = "1";
+		String userAction;
 		do {
 			System.out.println("**************************************************************************");
 			System.out.println(myPet.getFullName());
