@@ -3,26 +3,30 @@ public class VirtualPet {
 
 	// attributes
 	private String name;
-	private int weight;
-	
+	private String nameDescriptor;
 	private int hungerLevel;
 	private int thirstLevel;
-	private int activityLevel = 0;
-
+	private int activityLevel;
 	private boolean needsToPee = false;
 	private boolean needsToPoop = false;
 
 	// constructor
-	public VirtualPet(String name, int hungerLevel, int thirstLevel, int activityLevel) { 
+	public VirtualPet(String name, String nameDescriptor, int hungerLevel, int thirstLevel, int activityLevel) {
 		this.name = name;
+		this.nameDescriptor = nameDescriptor;
 		this.hungerLevel = hungerLevel;
-		this.thirstLevel = thirstLevel;;
+		this.thirstLevel = thirstLevel;
 		this.activityLevel = activityLevel;
 	}
 
 	// getters
 	public String getName() {
 		return name;
+	}
+
+	public String getFullName() {
+		String fullName = name + " " + nameDescriptor;
+		return fullName;
 	}
 
 	public int getHungerLevel() {
@@ -51,7 +55,7 @@ public class VirtualPet {
 		if ((activityLevel < 33) || needsToPee || needsToPoop) {
 			needsSomething = true;
 			status += name + " needs a walk, please. ";
-			status += "(";
+			status += "\n(";
 			if (activityLevel < 33) {
 				status += "Needs exercise! ";
 			}
@@ -63,7 +67,6 @@ public class VirtualPet {
 			}
 			status += ")";
 		}
-
 		return status;
 	}
 
@@ -73,26 +76,32 @@ public class VirtualPet {
 		activityLevel -= 5;
 	}
 
-	void giveFood() {
-
-		hungerLevel= 0;
+	void eat() {
+		hungerLevel = 0;
 		needsToPoop = true;
-		
 	}
 
-	void giveWater() {
-
+	void drink() {
 		thirstLevel = 0;
 		needsToPee = true;
-
 	}
 
 	void goForWalk() {
-
-		activityLevel = 75; 
+		if (activityLevel < 75) {
+			activityLevel = 75;
+		} else {
+			activityLevel += 5;
+		}
 		needsToPee = false;
 		needsToPoop = false;
+	}
 
+	void fetchBall() {
+		if (activityLevel < 75) {
+			activityLevel = 75;
+		} else {
+			activityLevel += 5;
+		}
 	}
 
 }
