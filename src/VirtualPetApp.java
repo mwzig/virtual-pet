@@ -15,12 +15,12 @@ public class VirtualPetApp {
 
 		String userAction = "1";
 		do {
-			System.out.println("********************************");
+			System.out.println("**************************************************************************");
 			System.out.println(myPet.getFullName());
 			System.out.println("Hunger Level: " + myPet.getHungerLevel() + "  Thirst Level: " + myPet.getThirstLevel()
 					+ "  Activity Level: " + myPet.getActivityLevel());
 			System.out.println(myPet.getStatus());
-			System.out.println("********************************");
+			System.out.println("**************************************************************************");
 			System.out.println("\nPress 1 to feed " + myPet.getName() + ".");
 			System.out.println("Press 2 to give " + myPet.getName() + " water.");
 			System.out.println("Press 3 to take " + myPet.getName() + " for a walk.");

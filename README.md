@@ -29,8 +29,13 @@ This is the virtual-pet README.md
    those levels are quickly incremented by 5 and show up as 5 rather than 0 
    immediately after feeding or watering.
    
-   If you take Lucy for a walk or play ball with her, her activity level resets to 75.
+   If you take Lucy for a walk or play ball with her, her activity level resets to 75 if it
+   is < 75, otherwise, the activity level increases by +5.
 
+   Note - if you are not taking care of Lucy, she will try to take care of her own needs!
+   She will eat your shoe and pee and poop inside if none of her needs are met.
+   
+   If all of her needs are met, the status will let you know!
 	
 	
 Future changes to consider:
