@@ -1,10 +1,10 @@
 This is the virtual-pet README.md
    
-   Lucy is your pet Therapy dog.   She is still a puppy, so she is not yet making 
+   Lucy is your pet therapy dog.   She is still a puppy, so she is not yet making 
    visits to patients in hospitals or nursing homes.  (She will need some training!)
    
    Lucy has some attributes that tell you about her state. 
-   (These include name, a description, hunger level, thirst level and activity level).
+   (These include name, a description, hunger level, thirst level, and activity level).
    
    Lucy has a hunger level initialized to 5, a thirst level initialized to 5, 
    and an activity level initialized to 25.
@@ -26,7 +26,7 @@ This is the virtual-pet README.md
    - If you give food or water to Lucy, it resets her hunger and thirst levels to 0. 
    She will never overeat!  
    - However, because of the passage of time (the tick() method), 
-   those levels are quickly incremented by 5 and show up as 5 rather than 0 
+   those levels are quickly incremented by 5, thus they show up as 5 rather than 0 
    immediately after feeding or watering.
    
    If you take Lucy for a walk or play ball with her, her activity level resets to 75 if it
@@ -43,7 +43,7 @@ Future changes to consider:
 	add a weight attribute - increase when eat, decrease when walk or play
 	add a favorite toy attribute
 	add a catchFrisbee method (return true if pet catches frisbee)
-	maybe a win the prize in a frisbee competition based on a random number
+	add a win the prize in a frisbee competition method based on a random number
 	
 	
 	
